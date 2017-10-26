@@ -25,8 +25,6 @@ import javax.crypto.NoSuchPaddingException;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
@@ -76,13 +74,12 @@ public class ServerFinishedComposite extends Composite implements ProtocolStep {
 		this.sslView = sslView;
 
 		grpServerFinished = new Group(this, SWT.NONE);
-		grpServerFinished.setLayout(new GridLayout(2, false));
-		grpServerFinished.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 3, 1));
+		grpServerFinished.setBounds(0, 0, 326, 175);
 		grpServerFinished
 				.setText(Messages.ServerFinishedCompositeGrpServerFinished);
 
 		lblFinished = new Label(grpServerFinished, SWT.NONE);
-		lblFinished.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 2, 1));
+		lblFinished.setBounds(10, 25, 50, 20);
 		lblFinished.setText(Messages.ServerFinishedCompositeLblFinished);
 
 		btnInformation = new Button(grpServerFinished, SWT.NONE);
@@ -100,7 +97,8 @@ public class ServerFinishedComposite extends Composite implements ProtocolStep {
 				refreshInformations();
 			}
 		});
-		btnInformation.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false, 1, 1));
+		btnInformation.setLocation(216, 140);
+		btnInformation.setSize(100, 25);
 		btnInformation.setText(Messages.ServerFinishedCompositeBtnInformation);
 	}
 

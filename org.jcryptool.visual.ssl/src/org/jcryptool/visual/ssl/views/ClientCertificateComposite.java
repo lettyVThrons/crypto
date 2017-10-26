@@ -23,8 +23,6 @@ import javax.crypto.KeyAgreement;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
@@ -140,14 +138,25 @@ public class ClientCertificateComposite extends Composite implements
 		this.sslView = sslView;
 
 		grpClientCertificate = new Group(this, SWT.NONE);
-		grpClientCertificate.setLayout(new GridLayout(6, false));
-		grpClientCertificate.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 3, 1));
-		grpClientCertificate.setText(Messages.ClientCertificateCompositeGrpClientCertificate);
+		grpClientCertificate.setBounds(0, 0, 326, 175);
+		grpClientCertificate
+				.setText(Messages.ClientCertificateCompositeGrpClientCertificate);
 
 		lblCertificate = new Label(grpClientCertificate, SWT.NONE);
-		lblCertificate.setLayoutData(new GridData(SWT.FILL, SWT.BOTTOM, false, false, 4, 1));
-		lblCertificate.setText(Messages.ClientCertificateCompositeLblCertifcate);
-		
+		lblCertificate.setBounds(10, 25, 160, 15);
+		lblCertificate
+				.setText(Messages.ClientCertificateCompositeLblCertifcate);
+
+		lblClientKeyExchange = new Label(grpClientCertificate, SWT.NONE);
+		lblClientKeyExchange.setBounds(10, 55, 110, 15);
+		lblClientKeyExchange
+				.setText(Messages.ClientCertificateCompositeLblClientKeyExchange);
+
+		lblCertificateVerify = new Label(grpClientCertificate, SWT.NONE);
+		lblCertificateVerify.setBounds(10, 85, 90, 15);
+		lblCertificateVerify
+				.setText(Messages.ClientCertificateCompositeLblCertificateVerify);
+
 		// Creates a new object from CertificateShow to display the client
 		// certificate
 		btnShow = new Button(grpClientCertificate, SWT.NONE);
@@ -161,24 +170,12 @@ public class ClientCertificateComposite extends Composite implements
 				}
 			}
 		});
-		btnShow.setLayoutData(new GridData(SWT.CENTER, SWT.FILL, false, false, 2, 1));
+		btnShow.setBounds(241, 20, 75, 25);
 		btnShow.setText(Messages.ClientCertificateCompositeBtnShow);
-
-		lblClientKeyExchange = new Label(grpClientCertificate, SWT.NONE);
-		lblClientKeyExchange.setLayoutData(new GridData(SWT.FILL, SWT.BOTTOM, false, false, 4, 1));
-		lblClientKeyExchange.setText(Messages.ClientCertificateCompositeLblClientKeyExchange);
-
-		lblCertificateVerify = new Label(grpClientCertificate, SWT.NONE);
-		lblCertificateVerify.setLayoutData(new GridData(SWT.FILL, SWT.BOTTOM, false, false, 4, 2));
-		lblCertificateVerify.setText(Messages.ClientCertificateCompositeLblCertificateVerify);
-		
-		Composite btnComposite = new Composite(grpClientCertificate, SWT.NONE);
-		btnComposite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 6, 1));
-		btnComposite.setLayout(new GridLayout(2, true));
 
 		// The information button which toggles to the word "Parameter" if
 		// pressed once
-		btnInfo = new Button(btnComposite, SWT.NONE);
+		btnInfo = new Button(grpClientCertificate, SWT.NONE);
 		btnInfo.addMouseListener(new MouseAdapter() {
 			public void mouseUp(MouseEvent e) {
 				infoText = !infoText;
@@ -191,17 +188,17 @@ public class ClientCertificateComposite extends Composite implements
 				refreshInformations();
 			}
 		});
-		btnInfo.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
+		btnInfo.setBounds(70, 140, 100, 25);
 		btnInfo.setText(Messages.ClientCertificateCompositeBtnInfo);
 
 		// Ends this step and moves on to the next step
-		btnNextStep = new Button(btnComposite, SWT.NONE);
+		btnNextStep = new Button(grpClientCertificate, SWT.NONE);
 		btnNextStep.addMouseListener(new MouseAdapter() {
 			public void mouseUp(MouseEvent e) {
 				sslView.nextStep();
 			}
 		});
-		btnNextStep.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
+		btnNextStep.setBounds(176, 140, 140, 25);
 		btnNextStep.setText(Messages.ClientCertificateCompositeBtnNextStep);
 	}
 

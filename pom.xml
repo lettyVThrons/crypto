@@ -23,6 +23,7 @@
 	<module>org.jcryptool.analysis</module>
 	<module>org.jcryptool.analysis.entropy</module>
 	<module>org.jcryptool.analysis.feature</module>
+	<module>org.jcryptool.analysis.fleissner</module>
 	<module>org.jcryptool.analysis.freqanalysis</module>
 	<module>org.jcryptool.analysis.friedman</module>
 	<module>org.jcryptool.analysis.graphtools</module>

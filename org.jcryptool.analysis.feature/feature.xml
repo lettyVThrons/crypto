@@ -224,6 +224,13 @@ litigation.
    </url>
 
    <plugin
+         id="org.jcryptool.analysis.fleissner"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
          id="org.jcryptool.analysis.freqanalysis"
          download-size="0"
          install-size="0"

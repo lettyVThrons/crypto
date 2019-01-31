@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension
+         point="org.eclipse.ui.views">
+      <view
+      		id="org.jcryptool.analysis.fleissner.views.FleissnerViewID"
+            name="Fleissner"
+            icon="icons/view.gif"
+            class="org.jcryptool.analysis.fleissner.views.FleissnerView"
+            category="org.jcryptool.analysis"
+            inject="true">
+      </view>
+   </extension>
+ <extension
+         point="org.jcryptool.core.operations.analysis">
+      <analysis
+            name="Fleissner"
+            viewId="org.jcryptool.analysis.fleissner.views.FleissnerViewID">
+      </analysis>
+   </extension>
+
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml"
+            contextHelpId="org.jcryptool.analysis.fleissner">
+      </contexts>
+   </extension>
+
+</plugin>
